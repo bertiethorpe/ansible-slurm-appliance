@@ -1,6 +1,21 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
+    "config:base"
+  ],
+  "fileMatch": [
+    "requirements.yml"
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["requirements.yml"],
+      "matchStrings": [
+        "#\\s*ansible\\s+roles\\s+and\\s+collections",
+        "^-\\s*name:\\s*\"?(?<depName>[^\"]+)\"?",
+        "^-\\s*src:\\s*\"?(?<depName>[^\"]+)\"?",
+        "^-\\s*version:\\s*\"?(?<currentValue>\\S+)\""
+      ],
+      "datasourceTemplate": "ansible-galaxy"
+    }
   ]
 }
