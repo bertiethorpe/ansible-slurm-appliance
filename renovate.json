@@ -3,5 +3,5 @@
   "extends": [
     "config:base"
   ],
-  "enabledManagers": [ "ansible-galaxy" ]
+  "enabledManagers": [ "ansible", "ansible-galaxy" ]
 }
