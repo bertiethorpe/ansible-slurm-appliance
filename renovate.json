@@ -3,8 +3,26 @@
   "extends": [
     "config:base"
   ],
-  "enabledManagers": [ "ansible", "ansible-galaxy" ],
-  "ansible": {
-    "fileMatch": ["ansible/filesystems.yml"]
+  
+  "enabledManagers": [
+    "ansible", 
+    "ansible-galaxy"
+  ],
+
+  // Ansible roles management (e.g., roles with src and version in requirements.yml)
+  "regexManagers": [
+    {
+      "fileMatch": ["requirements.yml"],
+      "matchStrings": [
+        "^\\s*-\\s*src:\\s*\"?(?<depName>https?://[^\"]+)\"?\\s*\\n\\s*version:\\s*\"?(?<currentValue>[^\"]+)\"",
+        "^\\s*-\\s*name:\\s*\"?(?<depName>[^\\s]+)\"?\\s*\\n\\s*version:\\s*\"?(?<currentValue>[^\"]+)\""
+      ],
+      "datasourceTemplate": "ansible-galaxy"
+    }
+  ],
+
+  // Ansible collections management (including git-based collections)
+  "ansible-galaxy": {
+    "fileMatch": ["requirements.yml"]
   }
 }
