@@ -3,5 +3,8 @@
   "extends": [
     "config:base"
   ],
-  "enabledManagers": [ "ansible", "ansible-galaxy" ]
+  "enabledManagers": [ "ansible", "ansible-galaxy" ],
+  "ansible": {
+    "fileMatch": ["ansible/filesystems.yml"]
+  }
 }
