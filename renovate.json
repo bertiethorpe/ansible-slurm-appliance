@@ -5,17 +5,16 @@
   ],
   "enabledManagers": [
     "ansible",
-    "ansible-galaxy",
-    "git-submodules",
-    "regex"
+    "ansible-galaxy"
   ],
   "regexManagers": [
     {
       "fileMatch": ["requirements.yml"],
       "matchStrings": [
-        "^\\s*-\\s*name:\\s*\"?(?<depName>https?://[^\"]+)\"?\\s*\\n\\s*type:\\s*git\\s*\\n\\s*version:\\s*\"?(?<currentValue>[^\"]+)\""
+        "^\\s*-\\s*name:\\s*\"?(?<depName>https://github.com/(?<repoOwner>[^/]+)/(?<repoName>[^/]+))\"?\\s*\\n\\s*type:\\s*git\\s*\\n\\s*version:\\s*\"?(?<currentValue>[^\"]+)\""
       ],
-      "datasourceTemplate": "git",
+      "datasourceTemplate": "github-tags",
+      "packageNameTemplate": "{{{repoOwner}}}/{{{repoName}}}",
       "versioningTemplate": "semver"
     }
   ]
