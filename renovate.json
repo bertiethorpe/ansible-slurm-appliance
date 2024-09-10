@@ -5,7 +5,7 @@
   ],
 
   "enabledManagers": [
-    "ansible", 
+    "ansible",
     "ansible-galaxy"
   ],
 
@@ -13,19 +13,9 @@
     {
       "fileMatch": ["requirements.yml"],
       "matchStrings": [
-        "^\\s*-\\s*name:\\s*\"?(?<depName>https?://[^\"]+)\"?\\s*\\n\\s*type:\\s*git\\s*\\n\\s*version:\\s*\"?(?<currentValue>[^\"]+)\""
+        "^\\s*-\\s*name:\\s*\"?(?<depName>https?://[^\"]+)\"?\\s*\\n\\s*type:\\s*git\\s*\\n\\s*version:\\s*\"?(?<currentValue>[^\\n]+)\""
       ],
       "datasourceTemplate": "git"
-    }
-  ],
-
-  "packageRules": [
-    {
-      "matchPackagePrefixes": [
-        "https://github.com/stackhpc/ansible_collection_slurm_openstack_tools",
-        "https://github.com/azimuth-cloud/ansible-collection-terraform"
-      ],
-      "datasource": "git"
     }
   ]
 }
