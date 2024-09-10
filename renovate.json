@@ -3,12 +3,12 @@
   "extends": [
     "config:base"
   ],
-  
   "enabledManagers": [
-    "ansible", 
-    "ansible-galaxy"
+    "ansible",
+    "ansible-galaxy",
+    "git-submodules",
+    "regex"
   ],
-  
   "regexManagers": [
     {
       "fileMatch": ["requirements.yml"],
