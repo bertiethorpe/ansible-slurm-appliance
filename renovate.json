@@ -19,7 +19,13 @@
     }
   ],
 
-  "ansible-galaxy": {
-    "fileMatch": ["requirements.yml"]
-  }
+  "packageRules": [
+    {
+      "matchPackagePrefixes": [
+        "https://github.com/stackhpc/ansible_collection_slurm_openstack_tools",
+        "https://github.com/azimuth-cloud/ansible-collection-terraform"
+      ],
+      "datasource": "git"
+    }
+  ]
 }
