@@ -9,7 +9,6 @@
     "ansible-galaxy"
   ],
 
-  // Ansible roles management (e.g., roles with src and version in requirements.yml)
   "regexManagers": [
     {
       "fileMatch": ["requirements.yml"],
@@ -21,7 +20,6 @@
     }
   ],
 
-  // Ansible collections management (including git-based collections)
   "ansible-galaxy": {
     "fileMatch": ["requirements.yml"]
   }
