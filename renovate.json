@@ -3,9 +3,7 @@
   "extends": [
     "config:base"
   ],
-  "fileMatch": [
-    "requirements.yml"
-  ],
+  
   "regexManagers": [
     {
       "fileMatch": ["requirements.yml"],
