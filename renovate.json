@@ -3,19 +3,20 @@
   "extends": [
     "config:base"
   ],
-
+  
   "enabledManagers": [
-    "ansible",
+    "ansible", 
     "ansible-galaxy"
   ],
-
+  
   "regexManagers": [
     {
       "fileMatch": ["requirements.yml"],
       "matchStrings": [
-        "^\\s*-\\s*name:\\s*\"?(?<depName>https?://[^\"]+)\"?\\s*\\n\\s*type:\\s*git\\s*\\n\\s*version:\\s*\"?(?<currentValue>[^\\n]+)\""
+        "^\\s*-\\s*name:\\s*\"?(?<depName>https?://[^\"]+)\"?\\s*\\n\\s*type:\\s*git\\s*\\n\\s*version:\\s*\"?(?<currentValue>[^\"]+)\""
       ],
-      "datasourceTemplate": "git"
+      "datasourceTemplate": "git",
+      "versioningTemplate": "semver"
     }
   ]
 }
