@@ -8,9 +8,11 @@
     "ansible-galaxy",
     "regex"
   ],
-  "ansible": {
+  "ansible": [
+    {
       "fileMatch": ["requirements.yml"]
-  }
+    }
+  ],
   "regexManagers": [
     {
       "fileMatch": ["requirements.yml"],
