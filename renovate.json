@@ -5,7 +5,7 @@
   ],
   "enabledManagers": [
     "ansible",
-    "ansible-galaxy"
+    "ansible-galaxy",
     "regex"
   ],
   "regexManagers": [
