@@ -25,8 +25,7 @@
         "(^|/)variables/[^/]+\\.ya?ml$"
       ],
       "matchStrings": [
-        "mysql_tag:\\s*(?<mysqlValue>[^\\s]+)"
-        
+        "mysql_tag:\\s*(?<currentValue>[^\\s]+)"
       ],
       "datasourceTemplate": "docker",
       "packageNameTemplate": "mysql",
@@ -38,7 +37,7 @@
         "(^|/)variables/[^/]+\\.ya?ml$"
       ],
       "matchStrings": [
-        "zenith_proxy_image_tag:\\s*(?<zenithVersion>[^\\s]+)"
+        "zenith_proxy_image_tag:\\s*(?<currentValue>[^\\s]+)"
       ],
       "datasourceTemplate": "github-tags",
       "packageNameTemplate": "azimuth-cloud/zenith",
