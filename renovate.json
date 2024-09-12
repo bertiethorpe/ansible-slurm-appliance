@@ -18,6 +18,18 @@
       "datasourceTemplate": "github-tags",
       "packageNameTemplate": "{{{repoOwner}}}/{{{repoName}}}",
       "versioningTemplate": "semver"
+    },
+    {
+      "fileMatch": [
+        "(^|/)defaults/[^/]+\\.ya?ml$",
+        "(^|/)variables/[^/]+\\.ya?ml$"
+      ],
+      "matchStrings": [
+        "mysql_tag:\\s*(?<currentValue>[^\\s]+)"
+      ],
+      "datasourceTemplate": "docker",
+      "packageNameTemplate": "mysql",
+      "versioningTemplate": "docker"
     }
   ]
 }
