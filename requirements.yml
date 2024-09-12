@@ -1,7 +1,7 @@
 ---
 roles:
   - src: stackhpc.nfs
-    version: v22.9.1 # Tolerate state nfs file handles
+    version: v22.9.1
   - src: https://github.com/stackhpc/ansible-role-openhpc.git
     version: v0.26.0 # https://github.com/stackhpc/ansible-role-openhpc/pull/168
     name: stackhpc.openhpc
@@ -14,14 +14,14 @@ roles:
   - src: cloudalchemy.alertmanager
     version: 0.19.1
   - src: https://github.com/stackhpc/ansible-grafana.git
-    name: cloudalchemy.grafana
     version: stackhpc-0.19.0 # fix grafana install
+    name: cloudalchemy.grafana
   - src: https://github.com/OSC/ood-ansible.git
-    name: osc.ood
     version: v3.1.5
+    name: osc.ood
   - src: https://github.com/stackhpc/ansible-role-os-manila-mount.git
-    name: stackhpc.os-manila-mount
     version: v24.5.0 # Support ceph quincy for RL9
+    name: stackhpc.os-manila-mount
 
 collections:
   - name: containers.podman
