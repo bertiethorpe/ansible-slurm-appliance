@@ -12,7 +12,7 @@
       "fileMatch": ["requirements.yml"],
       "matchStrings": [
         "-\\s*name:\\s*https://github\\.com/(?<repoOwner>[^/]+)/(?<repoName>[^/]+)\\s*\\n\\s*type:\\s*git\\s*\\n\\s*version:\\s*(?<currentValue>[^\\s]+)",
-        "-\\s*src:\\s*(https://github\\.com/(?<repoOwner>[^/]+)/(?<repoName>[^/]+)\\.git)\\s*\\n\\s*version:\\s*(?<currentValue>[^\\s]+)"
+        "-\\s*src:\\s*(https://github\\.com/(?<repoOwner>[^/]+)/(?<repoName>[^/]+)\\.git)\\s*(?:\\n\\s*name:\\s*(?<name>[^\\n]+))?\\s*\\n\\s*version:\\s*(?<currentValue>[^\\s]+)"
       ],
       "datasourceTemplate": "github-tags",
       "packageNameTemplate": "{{{repoOwner}}}/{{{repoName}}}",
@@ -20,3 +20,5 @@
     }
   ]
 }
+
+        
