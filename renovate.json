@@ -1,0 +1,42 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base"
+  ],
+  "enabledManagers": [
+    "ansible-galaxy",
+    "regex",
+    "ansible"
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["requirements.yml"],
+      "matchStrings": [
+        "-\\s*name:\\s*https://github\\.com/(?<repoOwner>[^/]+)/(?<repoName>[^/]+)\\s*\\n\\s*type:\\s*git\\s*\\n\\s*version:\\s*(?<currentValue>[^\\s]+)",
+        "-\\s*src:\\s*(https://github\\.com/(?<repoOwner>[^/]+)/(?<repoName>[^/]+)\\.git)\\s*(?:\\n\\s*name:\\s*(?<name>[^\\n]+))?\\s*\\n\\s*version:\\s*(?<currentValue>[^\\s]+)"
+      ],
+      "datasourceTemplate": "github-tags",
+      "packageNameTemplate": "{{{repoOwner}}}/{{{repoName}}}",
+      "versioningTemplate": "semver"
+    },
+    {
+      "fileMatch": ["ansible/roles/mysql/defaults/main.yml"],
+      "matchStrings": [
+        "mysql_tag:\\s*(?<currentValue>[^\\s]+)"
+      ],
+      "datasourceTemplate": "docker",
+      "packageNameTemplate": "mysql",
+      "versioningTemplate": "docker"
+    },
+    {
+      "fileMatch": ["ansible/roles/zenith_proxy/defaults/main.yml"],
+      "matchStrings": [
+        "zenith_proxy_image_tag:\\s*'?\"?(?<currentValue>[\\w.]+)'?\"?"
+      ],
+      "datasourceTemplate": "github-tags",
+      "packageNameTemplate": "azimuth-cloud/zenith",
+      "versioningTemplate": "semver"
+    }
+  ]
+}
+

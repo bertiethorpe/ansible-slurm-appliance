@@ -1,6 +1,7 @@
 ---
 roles:
-  - src: stackhpc.nfs # foo
+    # Tolerate state nfs file handles
+  - src: stackhpc.nfs
     version: v22.9.1
   - src: https://github.com/stackhpc/ansible-role-openhpc.git
     version: v0.26.0 # https://github.com/stackhpc/ansible-role-openhpc/pull/168
@@ -30,7 +31,7 @@ collections:
     version: 1.5.4
   - name: https://github.com/stackhpc/ansible_collection_slurm_openstack_tools
     type: git
-    version: v0.2.0
+    version: v0.1.0
   - name: ansible.posix
     version: 1.5.4
   - name: ansible.netcommon
@@ -43,7 +44,7 @@ collections:
     version: 3.7.2
   - name: openstack.cloud
     version: 2.1.0
-  - name: https://github.com/stackhpc/ansible-collection-terraform
+  - name: https://github.com/azimuth-cloud/ansible-collection-terraform
     type: git
     version: 0.2.0
 ...
