@@ -20,10 +20,7 @@
       "versioningTemplate": "semver"
     },
     {
-      "fileMatch": [
-        "(^|/)defaults/[^/]+\\.ya?ml$",
-        "(^|/)variables/[^/]+\\.ya?ml$"
-      ],
+      "fileMatch": ["ansible/roles/mysql/defaults/main.yml"],
       "matchStrings": [
         "mysql_tag:\\s*(?<currentValue>[^\\s]+)"
       ],
@@ -32,10 +29,7 @@
       "versioningTemplate": "docker"
     },
     {
-      "fileMatch": [
-        "(^|/)defaults/[^/]+\\.ya?ml$",
-        "(^|/)variables/[^/]+\\.ya?ml$"
-      ],
+      "fileMatch": ["ansible/roles/zenith_proxy/defaults/main.yml"],
       "matchStrings": [
         "zenith_proxy_image_tag:\\s*'?\"?(?<currentValue>[\\w.]+)'?\"?"
       ],
