@@ -25,11 +25,24 @@
         "(^|/)variables/[^/]+\\.ya?ml$"
       ],
       "matchStrings": [
-        "mysql_tag:\\s*(?<currentValue>[^\\s]+)"
+        "mysql_tag:\\s*(?<mysqlValue>[^\\s]+)"
+        
       ],
       "datasourceTemplate": "docker",
       "packageNameTemplate": "mysql",
       "versioningTemplate": "docker"
+    },
+    {
+      "fileMatch": [
+        "(^|/)defaults/[^/]+\\.ya?ml$",
+        "(^|/)variables/[^/]+\\.ya?ml$"
+      ],
+      "matchStrings": [
+        "zenith_proxy_image_tag:\\s*(?<zenithVersion>[^\\s]+)"
+      ],
+      "datasourceTemplate": "github-tags",
+      "packageNameTemplate": "azimuth-cloud/zenith",
+      "versioningTemplate": "semver"
     }
   ]
 }
