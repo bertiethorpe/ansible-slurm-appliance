@@ -37,7 +37,7 @@
         "(^|/)variables/[^/]+\\.ya?ml$"
       ],
       "matchStrings": [
-        "zenith_proxy_image_tag:\\s*(?<currentValue>[^\\s]+)"
+        "zenith_proxy_image_tag:\\s*'?\"?(?<currentValue>[\\w.]+)'?\"?"
       ],
       "datasourceTemplate": "github-tags",
       "packageNameTemplate": "azimuth-cloud/zenith",
